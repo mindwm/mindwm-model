@@ -32,3 +32,7 @@ class IoDocument(StructuredNode):
     ps1 = StringProperty(required = True)
     time = DateTimeProperty(default_now = True)
     tmux_pane = Relationship('TmuxPane', 'HAS_IO_DOCUMENT')
+
+class FullCommand(StructuredNode):
+    full_cmd = StringProperty(requered = True)
+    io_document = Relationship('IoDocument', 'HAS_IO_DOCUMENT')
